@@ -1,22 +1,14 @@
 <script lang="ts">
-	import Nav from '../components/Nav.svelte';
+  import AppNav from "../components/App/AppNav.svelte";
+  import AppFooter from "../components/App/AppFooter.svelte";
 
-	export let segment: string;
+  export let segment: string;
 </script>
 
-<style>
-	main {
-		position: relative;
-		max-width: 56em;
-		background-color: white;
-		padding: 2em;
-		margin: 0 auto;
-		box-sizing: border-box;
-	}
-</style>
+<AppNav {segment} />
 
-<Nav {segment}/>
-
-<main>
-	<slot></slot>
+<main class="flex-grow">
+  <slot />
 </main>
+
+<AppFooter />
